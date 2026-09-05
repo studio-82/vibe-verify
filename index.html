@@ -3,147 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Review agent-built iOS features in the simulator before the PR." />
-    <meta name="theme-color" content="#111113" />
-    <meta property="og:title" content="Vibe Verify — Simulator proof before the PR" />
-    <meta property="og:description" content="Replay the path, inspect screenshots, and see the actual iOS app state your agent reached." />
+    <meta name="description" content="Keep an eye on those vibe coded apps. Review agent-built iOS features with screenshots and simulator replay, before the PR. A Mac app. $15, once." />
+    <meta name="theme-color" content="#f6f5f2" />
+    <meta property="og:title" content="Vibe Viewer — Keep an eye on those vibe coded apps" />
+    <meta property="og:description" content="Your agent says it’s done. See the screens and replay the taps before you say ‘looks good.’ Built for iOS developers." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://vibeverify.s82.studio" />
-    <title>Vibe Verify — Simulator proof before the PR</title>
-    <link rel="icon" href="assets/vibe-verify-mark.svg" type="image/svg+xml" />
+    <meta property="og:url" content="https://vibeverify.s82.studio/" />
+    <title>Vibe Viewer — Keep an eye on those vibe coded apps</title>
+    <link rel="canonical" href="https://vibeverify.s82.studio/" />
+    <link rel="icon" href="assets/vibe-viewer-mark.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
     <script>
-      (function () {
-        const saved = localStorage.getItem('vibe-verify-theme');
-        if (saved) document.documentElement.dataset.theme = saved;
-      })();
+      try {
+        const theme = localStorage.getItem('vibe-viewer-theme');
+        if (theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (_) {}
     </script>
   </head>
-  <body>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Vibe Verify home">
-        <img src="assets/vibe-verify-mark.svg" alt="" width="34" height="34" />
-        <span>Vibe Verify</span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#how-it-works">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-      </nav>
-      <div class="header-actions">
-        <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
-          <span aria-hidden="true">◐</span>
-        </button>
-        <button class="header-cta" type="button" disabled aria-label="Vibe Verify checkout opening soon">Get Vibe Verify</button>
-      </div>
+      <a class="wordmark-dock" href="#top" aria-label="Vibe Viewer — back to top" aria-hidden="true" tabindex="-1"></a>
+      <nav aria-label="Main navigation"><a href="#how-it-works">About</a><a href="#features">Features</a><a href="#pricing">Get the app <span aria-hidden="true">↗</span></a></nav>
+      <button class="theme-toggle icon-button" type="button" aria-label="Switch to dark theme" title="Switch color theme" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg></button>
     </header>
-
-    <main id="top">
-      <section class="hero">
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span></span> Built for agent-driven iOS teams</p>
-          <h1>See what the agent built before you say <em>“looks good.”</em></h1>
-          <p class="hero-description">Review agent-built iOS features in the simulator before the PR. Replay the path, inspect the screenshots, and see the actual app state your agent reached.</p>
-          <div class="hero-actions">
-            <button class="button primary" type="button" disabled>Get Vibe Verify <span>— $15</span></button>
-            <a class="button secondary" href="#how-it-works">See the workflow <span aria-hidden="true">↓</span></a>
-          </div>
-          <p class="purchase-note">One-time purchase · 1 developer · up to 3 Macs</p>
+          <h1 id="hero-title" class="wordmark"><span>vibe</span><span>viewer</span></h1>
+          <p class="hero-tagline">Keep an eye on those<br class="desktop-break" /> vibe coded apps.</p>
+          <p class="hero-description">Your agent built it. Now see it.<br />Screenshots and simulator replay for your iOS reviews, all in one Mac app.</p>
+          <div class="hero-actions"><button class="button" type="button" disabled aria-describedby="launch-note">Get the app <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></button><p id="launch-note" class="purchase-note">Coming soon · $15, once. Yours to keep.</p></div>
         </div>
-        <div class="product-frame" aria-label="Vibe Verify review workspace preview">
-          <div class="frame-chrome"><span></span><span></span><span></span><p>Vibe Verify</p></div>
-          <img src="assets/vibe-verify-review.png" alt="Vibe Verify showing a review journey beside iOS simulator evidence" />
-          <div class="frame-caption"><span class="status-dot"></span><span>Simulator evidence captured</span><strong>8 steps</strong></div>
-        </div>
+        <figure class="product-preview">
+          <svg class="graphic-loop" viewBox="0 0 260 290" fill="none" aria-hidden="true" focusable="false">
+            <g stroke="currentColor" stroke-width="2.3" transform="rotate(24 130 145)">
+              <ellipse cx="130" cy="145" rx="97" ry="128"/><ellipse cx="130" cy="145" rx="77" ry="128"/><ellipse cx="130" cy="145" rx="54" ry="128"/><ellipse cx="130" cy="145" rx="28" ry="128"/>
+            </g>
+            <circle class="graphic-dot" cx="211" cy="74" r="17"/><circle cx="49" cy="236" r="5" fill="currentColor"/>
+          </svg>
+          <div class="preview-label"><span class="status-dot" aria-hidden="true"></span> Less recap. More actual app.</div>
+          <div class="product-frame"><img src="assets/vibe-verify-review.png" width="2628" height="1522" fetchpriority="high" alt="The Mac review workspace, with an agent task on the left, review notes and a recorded journey in the center, and the captured iOS screen on the right." /></div>
+          <figcaption><span>THE SCREENS. THE CONTEXT. THE WAY BACK.</span><span>macOS ↗ iOS Simulator</span></figcaption>
+        </figure>
+        <div class="hero-footnote"><span><span class="little-loop" aria-hidden="true">↝</span> Made for your “wait, let me check” moment.</span><a href="#how-it-works">Take a closer look <span aria-hidden="true">↓</span></a></div>
       </section>
-
-      <section class="proof-strip" aria-label="Product benefits">
-        <p>Your coding agent already did the work.</p>
-        <span></span>
-        <p>Now see the proof.</p>
-        <span></span>
-        <p>Then hand it off with context.</p>
-      </section>
-
-      <section class="workflow section" id="how-it-works">
-        <div class="section-heading">
-          <p class="eyebrow">The review loop</p>
-          <h2>From prompt to simulator,<br />with receipts.</h2>
-        </div>
+      <section class="workflow section" id="how-it-works" aria-labelledby="workflow-title">
+        <div class="section-heading"><p class="eyebrow">A second look, without the legwork</p><h2 id="workflow-title">Agent says done.<br />You get to see it.</h2><p class="section-intro">Stay in your flow with Codex or Claude. Open the review when you’re ready to take a look.</p></div>
         <ol class="workflow-list">
-          <li>
-            <span class="step-number">01</span>
-            <div><h3>The agent starts the job</h3><p>Codex or Claude records the task, project, and review intent as it begins building.</p></div>
-          </li>
-          <li>
-            <span class="step-number">02</span>
-            <div><h3>It gathers visual evidence</h3><p>As it self-reviews, it captures simulator screenshots and the steps required to get there.</p></div>
-          </li>
-          <li>
-            <span class="step-number">03</span>
-            <div><h3>You verify the result</h3><p>Open the review, inspect every screen, replay the journey, then decide whether it is ready for the PR.</p></div>
-          </li>
+          <li><span class="step-number">01</span><div><h3>Build as you usually do.</h3><p>The agent records the task and project, whether it starts with a ticket or just your prompt.</p></div></li>
+          <li><span class="step-number">02</span><div><h3>Let the agent show its work.</h3><p>During self-review, it collects screenshots, notes, and the simulator actions that got it there.</p></div></li>
+          <li><span class="step-number">03</span><div><h3>See for yourself.</h3><p>Inspect the screens. Replay the recorded path in the simulator. Then decide if it’s ready for the PR.</p></div></li>
         </ol>
       </section>
-
-      <section class="features section" id="features">
-        <div class="section-heading">
-          <p class="eyebrow">Made for the iOS loop</p>
-          <h2>Review the app,<br />not a recap.</h2>
-        </div>
+      <section class="features section" id="features" aria-labelledby="features-title">
+        <div class="section-heading feature-heading"><p class="eyebrow">Built around the iOS review loop</p><h2 id="features-title">A little less “trust me.”<br />A lot more “show me.”</h2></div>
         <div class="feature-grid">
-          <article>
-            <span class="feature-icon">⌁</span>
-            <h3>Simulator state</h3>
-            <p>See the actual screen your agent reached, at the exact point it captured evidence.</p>
-          </article>
-          <article>
-            <span class="feature-icon">⌁</span>
-            <h3>Journey replay</h3>
-            <p>Navigate straight back through the simulator flow instead of retracing it by hand.</p>
-          </article>
-          <article>
-            <span class="feature-icon">⌁</span>
-            <h3>Human-ready handoff</h3>
-            <p>Give a reviewer the feature, screenshots, and context—without a game of Slack archaeology.</p>
-          </article>
+          <article><span class="feature-number">01 / LOOK</span><h3>Real screens.<br />Not a summary.</h3><p>See what the agent actually reached, with captured simulator screenshots beside the review notes.</p></article>
+          <article><span class="feature-number">02 / REPLAY</span><h3>Go back there.<br />Without the guesswork.</h3><p>Replay the captured taps to reach the screen yourself. Check the behavior, not just the pixels.</p></article>
+          <article><span class="feature-number">03 / REVISIT</span><h3>Already built?<br />Still worth a look.</h3><p>Ask the agent to review an existing feature or screen. No new ticket or code change required.</p></article>
         </div>
       </section>
-
-      <section class="quote-section">
-        <blockquote>“Your agent says it’s done.<br /><strong>Cool. Show me.</strong>”</blockquote>
-      </section>
-
-      <section class="pricing section" id="pricing">
-        <div class="price-card">
-          <div class="price-card-copy">
-            <p class="eyebrow">Launch licence</p>
-            <h2>Vibe Verify<br />for iOS developers.</h2>
-            <p>Everything you need to review agent-built iOS work before it leaves your machine.</p>
-            <ul>
-              <li>1 named developer</li>
-              <li>Up to 3 Macs</li>
-              <li>All 1.x updates</li>
-              <li>No subscription</li>
-            </ul>
-          </div>
-          <div class="price-card-buy">
-            <p>Personal licence</p>
-            <div class="price"><span>$</span>15</div>
-            <p class="price-detail">one-time purchase</p>
-            <button class="button primary full" type="button" disabled>Get Vibe Verify</button>
-            <p class="checkout-status" id="checkout">Checkout opening soon — Lemon Squeezy approval is in progress.</p>
-          </div>
-        </div>
-        <p class="team-note">Building for an iOS team? Team licences with managed seats are next. <a href="mailto:hello@s82.studio?subject=Vibe%20Verify%20for%20my%20team">Tell us about your team →</a></p>
+      <section class="pricing section" id="pricing" aria-labelledby="pricing-title">
+        <div class="price-copy"><p class="eyebrow">One little app. One little purchase.</p><h2 id="pricing-title">Ship with<br />your eyes open.</h2><p>For the moment between “done” and “looks good.”</p><p class="team-note">Reviewing as a team? Team licences are next.<br /><a href="mailto:hello@s82.studio?subject=Vibe%20Viewer%20for%20my%20team">Let’s talk <span aria-hidden="true">↗</span></a></p></div>
+        <div class="price-card"><div class="price-top"><span>Personal licence</span><span class="price-label">NO SUBSCRIPTION</span></div><p class="price">$15<span> / once</span></p><ul><li>1 developer, up to 3 Macs</li><li>iOS screenshots &amp; simulator replay</li><li>Codex &amp; Claude integration</li><li>All 1.x updates</li></ul><button class="button full" type="button" disabled aria-describedby="checkout">Get the app <span aria-hidden="true">↗</span></button><p class="checkout-status" id="checkout">Not on sale just yet. Checkout is coming soon.</p></div>
       </section>
     </main>
-
-    <footer>
-      <a class="brand" href="#top"><img src="assets/vibe-verify-mark.svg" alt="" width="28" height="28" /><span>Vibe Verify</span></a>
-      <p>Made for the moment between “done” and “ship it.”</p>
-      <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@s82.studio?subject=Vibe%20Verify%20support">Support</a></div>
-    </footer>
-    <script src="site.js"></script>
+    <footer><a class="brand" href="#top">vibe viewer.</a><p>Made by <a href="https://s82.studio">Studio 82</a></p><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@s82.studio?subject=Vibe%20Viewer%20support">Support</a></div><button class="motion-toggle" type="button" aria-pressed="false" hidden>Pause motion</button></footer>
+    <script src="site.js" type="module"></script>
   </body>
 </html>
